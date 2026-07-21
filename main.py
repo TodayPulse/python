@@ -1,14 +1,30 @@
-# List of user IDs (some repeated)
-visits = [101, 102, 103, 101, 104, 102, 101, 105]
+# Nested Data Extraction: 
+# Given a dictionary where values are lists of tuples
+# (e.g., {'ClassA': [('John', 85), ('Jane', 92)]}),
+#  write a function to return a list of all names regardless of the class.
 
-# Using a set to find unique users and a dict for counts
-unique_users = set(visits)
-visit_counts = {}
 
-for user_id in visits:
-    # Safely count: if user_id is not in the dict, start at 0 and add 1
-    visit_counts[user_id] = visit_counts.get(user_id,0)
 
-# Output results
-print(f"Unique users count: {len(unique_users)}")
-print(f"Visit counts per user: {visit_counts}")
+def extract_all_names(data_dict):
+    """
+    Extracts and returns a flat list of all names from a dictionary 
+    where values are lists of (name, score) tuples.
+    """
+    all_names = []
+    
+    # Iterate through each class list in the dictionary values
+    for student_list in data_dict.values():
+        # Each student_list contains tuples of (name, score)
+        for score, s in student_list:
+            all_names.append(score)
+            
+    return all_names
+
+# --- Example Usage ---
+school_data = {
+    'ClassA': [('John', 85), ('Jane', 92)],
+    'ClassB': [('Bob', 78), ('Alice', 95), ('Charlie', 88)]
+}
+
+print(extract_all_names(school_data)) 
+Output: ['John', 'Jane', 'Bob', 'Alice', 'Charlie']
