@@ -1,24 +1,20 @@
-def simulate_pressure_sensor(readings):
-    index = 0
-    total = 0
+class Animal:
+    def __init__(self, name):
+        self.name = name
 
-    while index < len(readings):
-        reading = readings[index]
-
-        if reading == 999:
-            break
-        else:
-            if reading < 0:
-                print("Sensor Error Ignored")
-            else:
-                total += reading
-
-        index += 1
-
-    return total
+    def walk(self):
+        print(f"{self.name} can walk")
 
 
-# --- Example usage ---
-print(simulate_pressure_sensor([10, 20, -1, 30, 999, 40]))  # 60
-print(simulate_pressure_sensor([5, 5, 5]))                   # 15
-print(simulate_pressure_sensor([-1, -1, -1]))                 # 0
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name,breed)
+        # self.breed = breed
+
+    def sound(self):
+        print(f"Name: {self.name} \nDog Breed: {self.breed} \nCan Bark: True")
+
+
+dog1 = Dog("Lu", "Labrador")
+dog1.walk()
+dog1.sound()
