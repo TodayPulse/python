@@ -16,10 +16,10 @@
 # - Return the final multi-line string.
 # - Do not print.
 
-def solution(name, a, b, c):
-    return f"Student: {name}\nSum: {a+b+c}\nAverage: {round((a+b+c)/3,2)}\nMaximum: {max(a,b,c)}"
+# def solution(name, a, b, c):
+#     return f"Student: {name}\nSum: {a+b+c}\nAverage: {round((a+b+c)/3,2)}\nMaximum: {max(a,b,c)}"
 
-print(solution("Olowu Emmanuel",10,20,30))
+# print(solution("Olowu Emmanuel",10,20,30))
 
 # Better fix
 def solution(name, a, b, c):
@@ -29,3 +29,22 @@ def solution(name, a, b, c):
     return f"Student: {name}\nSum: {total}\nAverage: {average}\nMaximum: {maximum}"
 
 print(solution("Olowu Emmanuel", 10, 20, 30))
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def solution(name,a,b,c):
+#     sum = a + b + c
+#     Average = round(sum/3,2)
+#     Maximum = max(a,b,c)
+
+#     return f"Student: {name}\nSum: {sum}\nAverage: {Average}\n Maximum: {Maximum}"
