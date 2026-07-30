@@ -1,0 +1,94 @@
+# Challenge 1: The Smart Inventory Validator (Functions, If-Else Shorthand, pass)
+# Concepts Tested: Standard functions, conditional shorthand (ternary operators), and the pass placeholder.
+
+# The Task: Write a function named validate_stock(item_name, stock_count) that:
+
+# Uses a ternary conditional statement (if-else shorthand) to assign a status string: "Critical" 
+# if stock is less than 5, otherwise "Healthy".
+
+# If the item_name is explicitly equal to "DUMMY_ITEM", the function should do nothing yet and use 
+# the pass statement to bypass execution cleanly, returning None.
+
+# Otherwise, it should return a formatted string: f"Item: {item_name} | Status: {status}".
+
+
+
+
+
+QUESTION 2
+Challenge 2: Custom Filter & Transformer Engine (Functions, Lambda, Loops, continue)
+Concepts Tested: Functions taking functions (or lambda expressions), for loops, and the continue statement.
+
+The Task: Write a function named process_numbers(numbers_list, criteria_lambda) that:
+
+Iterates through a given list of integers using a for loop.
+
+Uses the provided criteria_lambda (a lambda function passed as an argument) to check a condition on each number.
+
+If the lambda returns False for a number, use the continue statement to skip it entirely.
+
+For numbers that pass, multiply them by 2 and append them to a new result list.
+
+Return the final modified list.
+
+Test case requirement: Pass a lambda function that checks if a number is odd (lambda x: x % 2 != 0).
+
+
+
+
+QUESTION 3
+Challenge 3: The Dynamic Safety Valve (While Loop, break, If-Else)
+Concepts Tested: while loops, infinite loops with safe exits, break, and complex condition checking.
+
+The Task: Write a function named simulate_pressure_sensor(readings) that takes a list of integer 
+sensor readings and simulates processing them sequentially using a while loop:
+
+Maintain an index tracker starting at 0.
+
+Continuously fetch readings. If a reading is exactly 999, trigger an emergency shutdown by executing a 
+break statement that exits the loop immediately.
+
+If a reading is negative (e.g., -1), print "Sensor Error Ignored" using an if-else block, skip processing it, 
+and move to the next index.
+
+For all other valid readings, accumulate them into a running total sum.
+
+Return the running total once the loop finishes or breaks.
+
+
+QUESTION 4
+The Collatz Sequence Analyzer (While Loop, If-Else Shorthand, Functions)
+Concepts Tested: Mathematical sequence generation, while loops, nested conditionals, and function modularity.
+
+The Task: Write a function collatz_length(n) that calculates how many steps it takes for a positive integer 
+n to reach 1 using the Collatz conjecture rules:
+
+If n is even, the next value is n // 2.
+
+If n is odd, the next value is 3 * n + 1.
+
+Use a while loop that runs as long as n > 1.
+
+Use an if-else shorthand (or standard inline logic) to compute the next value of n.
+
+Track and return the total number of steps taken to reach 1.
+
+
+QUESTION 5
+Challenge 5: The Ultimate Control Flow Matrix (Combined Master Test)
+Concepts Tested: Combining everything: Functions, nested loops (for + while), lambda validation, break, 
+continue, and if-else.
+
+The Task: Write a function named matrix_cruncher(matrix, threshold_lambda) where matrix is a list of lists 
+containing integers.
+
+Iterate through each row and each element using nested loops.
+
+Pass each element through the threshold_lambda. If the lambda evaluates to False, skip that element using continue.
+
+If the element is an exact match to a system-wide hazard code (0), terminate the entire row's processing
+immediately using a break statement.
+
+If an element makes it past both checks, add it to a running accumulator total.
+
+Return a dictionary summarizing the result: {"total": accumulator_sum, "status": "Secure"}.

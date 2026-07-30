@@ -97,15 +97,16 @@ print(index_pointer(list6,10))
 
 
 
-
 def find_number(lst, target):
-    # This creates a list of all instances of 'target' found in the list
-    return[n for n in lst if n == target else -1]
-    
-    # Return the target if the results list is not empty, otherwise return -1
-    # return results[0] if results else -1
+    # enumerate gives us both the index (i) and the number (n)
+    for i, n in enumerate(lst):
+        if n == target:
+            return i  # Return the index, not the number
+            
+    return -1  # If the loop finishes without returning, it wasn't found
 
-
-print(find_number(list6, 2))  # Output: 2
-print(find_number(list6, 11)) # Output: -1
+# Testing
+list6 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(find_number(list6, 5))   # Output: 4 (because 5 is at index 4)
+print(find_number(list6, 20))  # Output: -1 (not found)
 

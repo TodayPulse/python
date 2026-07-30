@@ -1,0 +1,17 @@
+Resolving Circular Dependencies via Dependency Injection
+Scenario: You are building an enterprise backend for the coffee cart. You have two modules: 
+brewing.py and inventory.py.
+
+brewing.py needs to check stock levels from inventory.py before brewing.
+
+inventory.py needs to log a telemetry event using a timestamp/logger function defined in brewing.py 
+whenever stock is modified.
+This creates a circular import crash (ImportError or AttributeError).
+
+Task:
+
+Write the architectural refactoring solution using Dependency Injection (passing the required function/object 
+as an argument rather than importing at the module level).
+
+Write the code implementation for inventory.py, brewing.py, and main.py that successfully avoids circular 
+imports while maintaining clean separation of concerns.

@@ -1,0 +1,15 @@
+Implementing a Function-Factory / Closure Injection Pattern
+Scenario: Sometimes injecting a callback function every time you call a 
+method becomes tedious. Instead, you want to use a Higher-Order Function 
+(Function Factory) that accepts the dependency once during initialization/setup and 
+returns a pre-configured operational function.
+
+Your Task:
+
+Create a module named analytics_engine.py that needs to fetch user session data from 
+user_manager.py.
+
+Instead of a direct import cycle, write a function factory inside analytics_engine.py 
+called create_tracker(fetch_user_func) that binds the external dependency into a closure.
+
+Implement main.py to instantiate and execute the tracker safely.

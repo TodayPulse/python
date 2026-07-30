@@ -41,7 +41,7 @@ class Dog(Animal):
 
        print(f"Name: {self.name} \nDog Breed: {self.breed} \nCan Bark: True")
 
-dog1 = Dog("Dkog", "labrado")
+dog1 = Dog("Dog", "labrado")
 dog1.walk()
 dog1.bark()
        

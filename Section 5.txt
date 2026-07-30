@@ -1,0 +1,149 @@
+# Challenge A: The Employee Record System (Classes & Objects)
+# Concepts Tested: Class definition, __init__, instance attributes vs class attributes,
+# instance methods, and the __str__ dunder method.
+
+# The Task: Write a class named Employee that:
+#   1. Has a class attribute `company_name` shared by all instances, set to "TechCorp".
+#   2. Has an __init__ that accepts `name` and `salary`, storing them as instance attributes.
+#   3. Has a method `give_raise(amount)` that increases `self.salary` by `amount`.
+#   4. Has a method `describe()` that returns a formatted string:
+#      "Name works at CompanyName earning $Salary" (using the actual attribute values).
+#   5. Implements __str__ so that print(employee_instance) outputs the same string as describe().
+#   6. Bonus: add a class method `change_company(new_name)` that updates `company_name`
+#      for ALL existing and future Employee instances at once.
+
+
+# Challenge B: The Vehicle Hierarchy (Inheritance)
+# Concepts Tested: Base classes, subclasses, super(), method overriding, polymorphism, isinstance().
+
+# The Task:
+#   1. Write a base class `Vehicle` with __init__(self, make, model) and a method `describe()`
+#      returning f"{make} {model}".
+#   2. Write a subclass `Car` that inherits from `Vehicle`, adds a `num_doors` attribute via
+#      its own __init__ (using super() to handle make/model), and OVERRIDES `describe()` to
+#      append " with X doors" to the parent's output (call the parent version with super()
+#      rather than rewriting the string from scratch).
+#   3. Write a second subclass `ElectricCar` that inherits from `Car`, adds a `battery_range`
+#      attribute, and overrides `describe()` again to append " and Y miles range", again
+#      building on top of the parent class's describe() via super().
+#   4. Write a function `print_all_descriptions(vehicles)` that loops through a mixed list of
+#      Vehicle/Car/ElectricCar objects and prints each one's describe() — demonstrating
+#      polymorphism (same method call, different behavior per class).
+#   5. Bonus: write a check using isinstance() that confirms every ElectricCar is also a Car
+#      and also a Vehicle.
+
+
+# Challenge C: The Scope Detective (Variable Scopes)
+# Concepts Tested: Local vs global scope, the `global` keyword, enclosing scope, the
+# `nonlocal` keyword, and LEGB resolution order.
+
+# The Task: Write a function `scope_report()` that demonstrates all four scope levels:
+#   1. Define a global variable `counter = 0` outside any function.
+#   2. Inside scope_report(), define a nested function `increment_global()` that uses the
+#      `global` keyword to increment the outer `counter` by 1 each time it's called.
+#   3. Inside scope_report(), define a local variable `local_message = "local"`, then define
+#      a nested function `modify_enclosing()` that uses `nonlocal` to change
+#      `local_message` to "modified by enclosing scope".
+#   4. Call increment_global() three times, then call modify_enclosing() once.
+#   5. Return a dictionary showing the final state: {"global_counter": counter,
+#      "local_message": local_message}.
+#   6. Bonus: Explain (as a comment) what would happen if you removed the `global` keyword
+#      from increment_global() and tried to do `counter += 1` — what error occurs and why.
+
+
+# Challenge D: The Report Formatter (String Formatting)
+# Concepts Tested: f-strings, .format(), format specifiers (padding, precision, alignment,
+# thousands separators, percentages).
+
+# The Task: Write a function `format_report(name, score, max_score, balance)` that returns a
+# single multi-line string using ONLY f-strings (with inline format specs) that:
+#   1. Prints the name left-aligned in a field of 15 characters, padded with dots ('.').
+#   2. Prints the score as a percentage of max_score, rounded to 2 decimal places
+#      (e.g., 45/60 -> "75.00%").
+#   3. Prints the balance as currency with a thousands separator and exactly 2 decimal
+#      places (e.g., 1234567.5 -> "$1,234,567.50").
+#   4. Prints today's "rank number" (hardcode as 7) as a zero-padded 4-digit string ("0007").
+#   5. Bonus: Do the same formatting a second time using .format() instead of f-strings, and
+#      confirm both produce identical output.
+
+
+# Challenge E: The Resilient Calculator (Errors in Python)
+# Concepts Tested: try/except/else/finally, catching multiple/specific exception types,
+# raising custom exceptions, and exception chaining.
+
+# The Task:
+#   1. Define a custom exception class `NegativeValueError(Exception)`.
+#   2. Write a function `safe_divide(a, b)` that:
+#      - Raises `NegativeValueError` (with a descriptive message) if either a or b is negative.
+#      - Catches ZeroDivisionError specifically if b is 0, returning the string
+#        "Cannot divide by zero" instead of crashing.
+#      - Catches TypeError specifically if a or b isn't a number, returning
+#        "Invalid input types".
+#      - Uses an `else` block to print "Division succeeded" ONLY if no exception occurred.
+#      - Uses a `finally` block that always prints "Operation attempted" regardless of outcome.
+#      - Returns the division result (a / b) when everything succeeds.
+#   3. Test it with: safe_divide(10, 2), safe_divide(10, 0), safe_divide(-5, 2),
+#      safe_divide(10, "two").
+#   4. Bonus: Modify NegativeValueError so when it's raised inside safe_divide, it chains
+#      from the original condition using `raise ... from ...`.
+
+
+# Challenge F: The Custom Countdown Iterator (Iterators)
+# Concepts Tested: __iter__, __next__, StopIteration, building a class that works in a
+# for loop, and the difference between an iterable and an iterator.
+
+# The Task:
+#   1. Write a class `Countdown` that takes a starting number `start` in its __init__.
+#   2. Implement __iter__(self) to return self (making the object its own iterator).
+#   3. Implement __next__(self) so that each call returns the current count and decreases
+#      it by 1, EXCEPT: when the count goes below 0, raise StopIteration to end iteration.
+#   4. Demonstrate it working in a standard for loop: `for num in Countdown(5): print(num)`
+#      should print 5, 4, 3, 2, 1, 0 and then stop cleanly.
+#   5. Bonus: Write a second version, `CountdownGenerator`, using a generator function
+#      (with `yield`) that produces the identical sequence, and explain in a comment one
+#      practical difference between the class-based iterator and the generator approach.
+
+
+# Challenge G: The Input Validation Loop (User Input)
+# Concepts Tested: input(), type casting/conversion, validation loops, exception handling
+# around bad input, and looping until valid data is received.
+
+# The Task: Write a function `get_valid_age()` that:
+#   1. Repeatedly prompts the user with input() asking "Enter your age: ".
+#   2. Attempts to convert the input to an integer using int(); if this raises a
+#      ValueError (e.g., user typed "abc"), catch it, print "Please enter a valid whole
+#      number", and prompt again.
+#   3. If the number converts successfully but is negative or greater than 120, print
+#      "Age must be between 0 and 120" and prompt again (without crashing).
+#   4. Once a valid age is entered, return it.
+#   5. Bonus: add a maximum of 3 attempts; if the user fails 3 times, raise a custom
+#      exception `TooManyAttemptsError` instead of looping forever.
+
+
+# Challenge H (MASTER CHALLENGE): The Fleet Management Console
+# Concepts Tested: EVERYTHING above combined — classes, inheritance, scopes, string
+# formatting, error handling, custom iterators, and user input.
+
+# The Task: Build a small system that manages a "fleet" of vehicles.
+#   1. Reuse/extend your Vehicle/Car/ElectricCar classes from Challenge B. Add a class
+#      attribute `total_vehicles` (shared across all instances) that increments by 1 every
+#      time any vehicle subclass is instantiated (use it to test your understanding of
+#      class attributes + inheritance together).
+#   2. Write a class `Fleet` that stores a list of vehicle objects and implements __iter__
+#      and __next__ so that `for vehicle in my_fleet:` iterates over its vehicles directly
+#      (i.e., Fleet itself is a custom iterator/iterable, not just a wrapper around a list's
+#      own iterator — no using `iter(self.vehicles)` shortcuts).
+#   3. Write a method `Fleet.add_vehicle()` that prompts the user (via input()) to choose a
+#      vehicle type ("car" or "electric"), enter make/model (and num_doors/battery_range as
+#      relevant), validating that numeric fields are actually numeric (loop until valid,
+#      using try/except) — raise a custom exception `InvalidVehicleTypeError` if the user
+#      types something other than "car"/"electric" three times in a row.
+#   4. Write a method `Fleet.summary()` that returns a nicely formatted string (using
+#      f-strings with alignment/padding) listing every vehicle's describe() output, plus a
+#      final line showing `Vehicle.total_vehicles` and the fleet's own count, demonstrating
+#      the difference between a class-level attribute and a local/instance-level count
+#      (this is your variable-scope check in disguise).
+#   5. Wrap the whole console flow (adding a few vehicles, then printing the summary) in a
+#      main() function with proper try/except/finally so that ANY unexpected error during
+#      the session prints "Session ended due to an error" but still shows whatever summary
+#      data was successfully gathered before the crash.

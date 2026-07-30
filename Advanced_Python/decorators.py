@@ -12,7 +12,7 @@ def timer_dec(base_fn):
 
 @timer_dec
 def brew_tea(tea_type, steep_time):
-    print(f"Brewing tea... Tea_type is {tea_type} \n Steep_time is {steep_time}")
+    print(f"Brewing tea... Tea_type is \n {tea_type} \n Steep_time is {steep_time}")
     time.sleep(1)
     print("Tea is ready!")
 

@@ -1,0 +1,32 @@
+Part 2: Comprehensive Challenges (7 General Exercises)
+
+The Student Database: 
+Create a list of dictionaries, where each dictionary represents a student with keys: name, 
+grades (a list of integers), and id (a tuple). Calculate the average grade for each student.
+
+Unique User Activity: 
+You have a list of user IDs who visited a website. Some visited multiple times. 
+Use a set to find how many unique users visited, and a dictionary to count how many times 
+each unique user visited.
+
+The Shopping Cart: 
+Create a function that takes a list of items (as a list of strings). 
+Use a dictionary to store the price of these items. Calculate the total cost of the cart, 
+ignoring any items that are not in your price dictionary.
+
+Nested Data Extraction: 
+Given a dictionary where values are lists of tuples (e.g., {'ClassA': [('John', 85), ('Jane', 92)]}),
+ write a function to return a list of all names regardless of the class.
+
+Set-List Interaction: 
+Write a script that takes a list of full names. 
+Extract all unique first names and store them in a list, then sort that list alphabetically.
+
+Data Cleaning: 
+Take a list of dictionaries representing product data. Some keys might be missing. 
+Write code to filter out any dictionaries that do not have both a 'name' and 'price' key.
+
+The "Phonebook" CLI: 
+Create a small program that uses a dictionary to store contact names and phone numbers. 
+Allow the user to "Add" a contact, "Delete" a contact, and "Lookup" a contact. 
+Use a list to store the names in order of addition.

@@ -64,3 +64,23 @@ splited = set(text.split())
 flitered_set = {word for word in splited if not word.lower().startswith('a')}
 
 print(f"flitered word is : {flitered_set}")
+
+
+# QUESTION 5
+# Logic: 
+# Given a list of numbers, determine if there are any duplicate 
+# elements in the list by comparing the length of the list to the 
+# length of the set of that list.
+
+
+def has_duplicates(input_list):
+    # If the length of the set is less than the length of the list, 
+    # it means duplicates were removed.
+    return len(set(input_list)) < len(input_list)
+
+# Test cases
+list_with_dupes = [1, 2, 3, 2, 4, 5]
+list_without_dupes = [1, 2, 3, 4, 5]
+
+print(f"List with duplicates: {has_duplicates(list_with_dupes)}")      # Output: True
+print(f"List without duplicates: {has_duplicates(list_without_dupes)}") # Output: False

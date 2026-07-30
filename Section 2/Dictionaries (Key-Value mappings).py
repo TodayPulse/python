@@ -77,7 +77,31 @@ straight = {"Alice": 92, "Bob": 75, "Charlie": 88, "David": 60}
 
 invert = {}
 
-for key, name in straight.items():
-    invert[name]=key
+for name, score in straight.items():
+    invert[score]=name
 
-print(invert)    
+print(invert)  
+
+
+# QUESTION 5
+# Default Values: 
+# Use the .get() method or collections.defaultdict to safely access a key in a dictionary 
+# and provide a default value if the key is missing.
+
+# Create a dictionary with some initial data
+scores = {"Alice": 92, "Bob": 75}
+
+# 1. Accessing a key that EXISTS
+# Alice is in the dictionary, so it returns her score (92)
+alice_score = scores.get("Alice", 0)
+print(f"Alice's score: {alice_score}")
+
+# 2. Accessing a key that IS MISSING
+# "Charlie" is not in the dictionary. 
+# Instead of crashing with a KeyError, .get() returns the default value (0).
+charlie_score = scores.get("Charlie", 0)
+print(f"Charlie's score: {charlie_score}")
+
+# 3. Proving the dictionary didn't change
+# Note: .get() does NOT add the key "Charlie" to the dictionary.
+print("\nFinal dictionary state:", scores)

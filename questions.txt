@@ -1,0 +1,90 @@
+Part 1: Targeted Exercises (5 per collection)
+Lists (Dynamic arrays)
+Filtering: Write a function that takes a list of integers and returns a new list containing only 
+the even numbers.
+
+List Comprehension: Use a list comprehension to create a list of the squares of numbers from 1 to 10.
+
+Manipulation: Given a list of strings, write code to remove the second element, append 
+"Python" to the end, and reverse the entire list.
+
+Flattening: Write a function that takes a list of lists (e.g., [[1, 2], [3, 4]]) and returns 
+a single flat list ([1, 2, 3, 4]).
+
+Searching: Write a function that returns the index of the first occurrence of a target number
+ in a list; if the number is not found, return -1.
+
+Tuples (Immutable sequences)
+Unpacking: Given a tuple (name, age, city), unpack it into three separate variables and print
+ them formatted.
+
+Immutability: Write code to demonstrate what happens when you try to change an element in a tuple.
+ Explain why it fails.
+
+Conversion: Take a list of numbers, convert it to a tuple, and then find the maximum value 
+using max().
+
+Swapping: Use tuple unpacking to swap the values of two variables a and b without using a 
+temporary variable.
+
+Counting: Given a tuple with repeating elements, write a function that returns the count of a 
+specific element without using the built-in .count() method.
+
+Sets (Unique elements & Unordered)
+Deduplication: Write a function that takes a list with duplicate elements and returns a list 
+containing only unique elements using sets.
+
+Set Math: Given two sets A = {1, 2, 3, 4} and B = {3, 4, 5, 6}, find the union, intersection, 
+and difference (A - B).
+
+Membership: Check if all elements of a set subset are present in a set main_set 
+(hint: look for issubset).
+
+Filtering: Create a set of words from a string, then remove all words that start with
+ the letter 'a' (case-insensitive).
+
+Logic: Given a list of numbers, determine if there are any duplicate elements in the 
+list by comparing the length of the list to the length of the set of that list.
+
+Dictionaries (Key-Value mappings)
+Frequency Counter: Write a function that counts the frequency of every word in a string 
+ stores it in a dictionary.
+
+Merging: Given two dictionaries, merge them into a third dictionary. If a key exists in both, 
+sum their values.
+
+Transformation: Given a dictionary of names and scores, return a new dictionary where 
+ people with scores above 80 are included.
+
+Inversion: Write code to invert a dictionary (keys become values, values become keys). 
+Assume all values are unique.
+
+Default Values: Use the .get() method or collections.defaultdict to safely access a key 
+in a dictionary and provide a default value if the key is missing.
+
+Part 2: Comprehensive Challenges (7 General Exercises)
+The Student Database: Create a list of dictionaries, where each dictionary represents a
+student with keys: name, grades (a list of integers), and id (a tuple). Calculate the average
+ grade for each student.
+
+Unique User Activity: You have a list of user IDs who visited a website. Some visited multiple 
+times. Use a set to find how many unique users visited, and a dictionary to count how many times
+ each unique user visited.
+
+The Shopping Cart: Create a function that takes a list of items (as a list of strings). Use a
+ dictionary to store the price of these items. Calculate the total cost of the cart, ignoring
+  any items that are not in your price dictionary.
+
+Nested Data Extraction: Given a dictionary where values are lists of tuples
+ (e.g., {'ClassA': [('John', 85), ('Jane', 92)]}), write a function to return a
+ list of all names regardless of the class.
+
+Set-List Interaction: Write a script that takes a list of full names. Extract all unique 
+first names and store them in a list, then sort that list alphabetically.
+
+Data Cleaning: Take a list of dictionaries representing product data. Some keys might be 
+missing. Write code to filter out any dictionaries that do not have both a 'name' and 'price' key.
+
+The "Phonebook" CLI: Create a small program that uses a dictionary to store contact names 
+and phone numbers. Allow the user to "Add" a contact, "Delete" a contact, and "Lookup" a contact. 
+Use a list to store the names in order of addition.

@@ -1,20 +1,39 @@
-class Animal:
-    def __init__(self, name):
-        self.name = name
+def exact_calculator(left, operator, right):
 
-    def walk(self):
-        print(f"{self.name} can walk")
+    def to_number(value):
+        try:
+            return int(value)
+        except(ValueError, TypeError):
+            pass
+        try:
+            return float(value)
+        except(ValueError, TypeError):
+            return None
 
+    left_num = to_number(left)
+    right_num = to_number(right)
 
-class Dog(Animal):
-    def __init__(self, name, breed):
-        super().__init__(name,breed)
-        # self.breed = breed
+    if left_num is None or right_num is None:
+        return "Invalid number"
 
-    def sound(self):
-        print(f"Name: {self.name} \nDog Breed: {self.breed} \nCan Bark: True")
+    valid_operators = ["+", "-", "*","/","%","**"]
+    if operator not in valid_operators:
+        return "Invalid operator"
 
+    if operator in ("/", "%") and right_num == 0:
+        return "Cannot divide by zero"
 
-dog1 = Dog("Lu", "Labrador")
-dog1.walk()
-dog1.sound()
+    if operator == "+":
+        result = left_num + right_num
+    elif operator == "-":
+        result = left_num - right_num
+    elif operator == "*":
+        result = left_num - right_num
+    elif operator == "/":
+        result = left_num / right_num
+    elif operator == "%":
+        result = left_num % right_num
+    elif operator == "**":
+        result = left_num ** right_num
+
+    

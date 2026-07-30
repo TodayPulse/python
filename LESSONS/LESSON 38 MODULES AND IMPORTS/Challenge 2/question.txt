@@ -1,0 +1,23 @@
+Advanced Practice Tasks: Circular Dependencies & Dependency Injection
+To truly master the architectural patterns needed to defeat circular imports, complete
+ these three targeted tasks building directly on Challenge 1.
+
+Task 1: Refactoring a Two-Way Notification & Payment Pipeline
+Scenario: You have two modules in your coffee enterprise app: payment.py and notifications.py.
+
+payment.py needs to trigger an email confirmation via notifications.py once a transaction
+ succeeds.
+
+notifications.py needs to query payment.py to check the account balance or transaction 
+status before sending billing alerts.
+This causes a cyclic dependency crash if imported globally.
+
+Your Task:
+
+Refactor both modules so that neither imports the other at the top-level module scope.
+
+Implement Dependency Injection by passing a callable notification function (or callback) 
+into the payment processing function.
+
+Write a main.py script that orchestrates both modules cleanly without triggering an 
+ImportError.
