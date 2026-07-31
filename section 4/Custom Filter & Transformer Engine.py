@@ -28,9 +28,25 @@ def process_numbers(numbers_list, criteria_lambda):
 
         modifiedList.append(number * 2)
 
+
     return modifiedList
 
 
 numberList = [0,1,2,3,4,5,6,7,8,9,10]
 print(process_numbers(numberList, lambda x: x % 2 != 0 ))
+
+ 
+
+    # modifiedList = []
+    # # c = 0
+    # for number in numbers_list:
+
+    #     # if not criteria_lambda(number):
+    #     #     continue
+    #     if criteria_lambda(number):
+    #         modifiedList.append(number * 2)
+    #     # else:
+    #     #     c+=1
+
+    # return modifiedList
 

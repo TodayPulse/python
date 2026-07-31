@@ -1,17 +1,7 @@
-"""Analytics Engine Module
-
-Demonstrates closure injection / function factory pattern.
-"""
-
 
 def create_tracker(fetch_user_func):
-    """Function Factory: Accepts a user-fetching function dependency and returns
-
-    a pre-configured tracking function.
-    """
 
     def track_session(user_id: int):
-        """Pre-configured operational function using the injected dependency."""
         user_data = fetch_user_func(user_id)
 
         if not user_data:

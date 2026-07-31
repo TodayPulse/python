@@ -13,3 +13,5 @@ Instead of a direct import cycle, write a function factory inside analytics_engi
 called create_tracker(fetch_user_func) that binds the external dependency into a closure.
 
 Implement main.py to instantiate and execute the tracker safely.
+
+
