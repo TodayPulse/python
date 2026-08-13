@@ -6,5 +6,3 @@ def brew_coffee(logger_func):
     deduct("Cofee","10 cl", logger_callback=logger_func)
 
     print("Successfully extrected from the machine")
-
-    
