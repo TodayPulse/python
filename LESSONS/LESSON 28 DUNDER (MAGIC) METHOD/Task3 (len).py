@@ -7,6 +7,7 @@ class Playlist:
 
     def __len__(self):
         return len(self.songs)
+        # return 10
 
 my_playlist = Playlist(["Song A", "Song B", "Song C"])
 print(len(my_playlist))
